@@ -1,5 +1,7 @@
 package parallel;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import io.cucumber.java.After;
@@ -29,13 +31,11 @@ public class AppHooks {
 		
 		driver = driverfactory.initDriver(browservalue);
 		
-		driver.get(url);
-		
 		driver.manage().window().maximize();
 		
 	}
 	
-	@After
+	@After(order = 0)
 	public void quitBrowser()
 	{
 		driver.quit();
@@ -43,12 +43,23 @@ public class AppHooks {
 	
 	
 	
-	@After
+	@After(order = 1)
 	public void tearDown(Scenario scenario)
 	{
 		
 		if(scenario.isFailed())
 		{
+			String scenarioname = scenario.getName();
+			
+			String scrname = scenarioname.replaceAll(" ", "_");
+			
+			TakesScreenshot ts = (TakesScreenshot)driver;
+			
+			byte[] sourcepath = ts.getScreenshotAs(OutputType.BYTES);
+			
+			scenario.attach(sourcepath, "image/png", scrname);
+			
+			
 			
 		}
 		

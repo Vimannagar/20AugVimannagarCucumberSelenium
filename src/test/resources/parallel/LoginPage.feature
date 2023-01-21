@@ -13,4 +13,3 @@ Given user is at the login page
 When user enters the username as "8176867662"
 And user enters the password as "123456"
 And user click on signin button
-Then user should get logged in

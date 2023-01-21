@@ -18,11 +18,12 @@
     <maven.compiler.version>3.8.1</maven.compiler.version>
     <maven.surefire.plugin>2.22.2</maven.surefire.plugin>
     <cucumber.version>6.9.0</cucumber.version>
-    <junit.version>4.13.1</junit.version>
     
   </properties>
 
   <dependencies>
+  
+ 
  <dependency>
     <groupId>io.cucumber</groupId>
     <artifactId>cucumber-java</artifactId>
@@ -37,7 +38,7 @@
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.7.1</version>
+    <version>7.7.0</version>
     <scope>test</scope>
 </dependency>
 <dependency>
@@ -59,7 +60,7 @@
   </dependencies>
 
   <build>
-    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+    
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -78,6 +79,6 @@
           <version>${maven.surefire.plugin}</version>
         </plugin>
       </plugins>
-    </pluginManagement>
+   
   </build>
 </project>
