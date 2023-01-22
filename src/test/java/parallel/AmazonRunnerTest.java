@@ -19,7 +19,7 @@ import io.cucumber.testng.CucumberOptions;
 
 
 
-public class RunCucumberTest extends AbstractTestNGCucumberTests {
+public class AmazonRunnerTest extends AbstractTestNGCucumberTests {
 	
 	@DataProvider(parallel = false)
 	public Object[][] scenarios()
